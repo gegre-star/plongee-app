@@ -1,0 +1,127 @@
+import { fiche, qcm, vf } from '../build';
+import type { Module } from '../types';
+
+/** N2 — UL 5 : le matériel (fiches 33 à 37 du manuel). */
+export const n2Ul5: Module = {
+  id: 'n2-ul5',
+  level: 'N2',
+  code: 'UL 5',
+  title: 'Le matériel',
+  fiches: [
+    fiche('N2', 33, 'Les instruments de mesure des paramètres', [
+      'Profondimètre électronique (« timer ») : profondeur, temps, alarme de vitesse, mémoire. L’ordinateur ajoute le calcul de la désaturation.',
+      'À vérifier à l’achat : gestion des paliers (pictogramme, temps total, temps par profondeur), cas « hors limites », alarme de vitesse, mode planification.',
+      'Écrans : LCD (rétro-éclairage indispensable), LCD-TFT (couleur, très consommateur), OLED (meilleure lisibilité, durée de vie d’environ 15 000 heures).',
+      'Certains ordinateurs gèrent l’air (manomètre, émetteur sans fil) et le nitrox (teneur en O2 à paramétrer, alarme de profondeur plancher).',
+      'Les ordinateurs ne prennent pas réellement en compte le froid ou l’effort : ils durcissent seulement certaines variables du modèle.',
+      'Entretien : rinçage à l’eau douce, séchage des contacts avec un chiffon doux (jamais d’air comprimé), boîte non étanche, stockage au sec, en cabine en avion, révision tous les 2 ans.',
+    ], [
+      qcm('Quel écran offre la meilleure lisibilité dans toutes les conditions d’éclairage ?', ['LCD monochrome', 'OLED', 'À aiguille', 'Capillaire'], 1,
+        'Les écrans OLED sont plus lisibles et consomment moins, mais leur durée de vie est limitée à environ 15 000 heures.'),
+      vf('Tous les ordinateurs prévoient une procédure de secours en cas d’erreur de procédure.', false,
+        'Certains n’affichent plus rien, d’autres passent en mode profondimètre, d’autres proposent une procédure de secours.'),
+      qcm('Pourquoi un écran LCD a-t-il besoin d’un rétro-éclairage ?', [
+        'Pour économiser la pile',
+        'Pour rester lisible en cas de faible lumière : profondeur, eau trouble, nuit',
+        'Pour chauffer l’appareil',
+        'Pour rendre l’appareil étanche',
+      ], 1, 'Les caractères d’un LCD sont rudimentaires ; le rétro-éclairage s’active quelques secondes pour limiter la consommation.'),
+      qcm('Avec quoi sécher les contacts d’un ordinateur de plongée ?', ['De l’air comprimé', 'Un chiffon doux', 'Un sèche-cheveux', 'Une brosse métallique'], 1,
+        'Séchage soigneux avec un chiffon doux, jamais à l’air comprimé, et jamais d’aiguille dans le capteur de pression.'),
+      qcm('Tous les combien de temps faire réviser son ordinateur ?', ['Tous les mois', 'Tous les 2 ans', 'Tous les 10 ans', 'Jamais'], 1,
+        'Une révision tous les 2 ans par un distributeur agréé prévient les dysfonctionnements.'),
+      vf('En avion, il vaut mieux laisser son ordinateur en soute.', false,
+        'On prend son ordinateur avec soi, en cabine.'),
+    ]),
+
+    fiche('N2', 34, 'Les détendeurs', [
+      'Le détendeur détend l’air en deux étapes : le premier étage amène l’air à une pression intermédiaire (8 à 10 bars au-dessus de la pression ambiante), le deuxième étage à la pression ambiante.',
+      'Il fournit de l’air à la demande, à la pression ambiante, quelle que soit la profondeur.',
+      'Des joints toriques, plats, membranes ou soupapes assurent l’étanchéité.',
+      'Entrée d’eau à l’aspiration : panne du 2e étage (embout, membrane, boîtier, soupape).',
+      'Débit continu : panne du 1er étage (clapet non étanche).',
+      'Compensation du 1er étage : confort respiratoire constant jusqu’en fin de plongée. Piston ou membrane : deux technologies performantes.',
+      'DIN : supporte des pressions supérieures à 200 ou 230 bars. Étrier : adaptable avec des adaptateurs.',
+    ], [
+      qcm('À quelle pression l’air sort-il du deuxième étage ?', ['À 200 bars', 'À la pression intermédiaire', 'À la pression ambiante', 'À 1 bar toujours'], 2,
+        'Le deuxième étage détend à nouveau l’air de la pression intermédiaire à la pression ambiante.'),
+      qcm('Quelle est la pression intermédiaire d’un détendeur ?', ['1 à 2 bars', '8 à 10 bars au-dessus de la pression ambiante', '50 bars', '200 bars'], 1,
+        'De l’ordre de 8 à 10 bars au-dessus de la pression ambiante, avec des extrêmes de 5 à 14 bars.'),
+      qcm('De l’eau entre dans votre bouche à chaque inspiration. Où est la panne probable ?', ['Au 1er étage', 'Au 2e étage', 'Dans le manomètre', 'Dans la bouteille'], 1,
+        'Embout percé ou fendu, membrane défectueuse, boîtier fêlé ou soupape d’expiration endommagée : panne du 2e étage.'),
+      qcm('Le détendeur est en débit continu. Où est la panne ?', ['Au 2e étage uniquement', 'Au 1er étage (clapet non étanche)', 'Dans le gilet', 'Dans l’embout'], 1,
+        'Une mauvaise étanchéité siège/clapet au 1er étage augmente la pression intermédiaire et met le 2e étage en débit continu.'),
+      vf('En fin de plongée, un détendeur compensé reste plus souple à l’inspiration.', true,
+        'La compensation du premier étage rend le confort respiratoire stable pendant toute la plongée.'),
+      qcm('Quel avantage a un détendeur DIN ?', ['Il est moins cher', 'Il supporte des pressions supérieures à 200 ou 230 bars', 'Il est plus léger', 'Il n’a pas de joint'], 1,
+        'Des blocs à 300 bars apparaissent ; des adaptateurs permettent d’utiliser un détendeur DIN sur une bouteille à étrier.'),
+    ]),
+
+    fiche('N2', 35, 'Le gilet', [
+      'Trois types : enveloppant, ajustable (le plus répandu en loisir), à flottabilité dorsale.',
+      'Le gilet doit permettre de « regagner la surface et de s’y maintenir » (Code du sport).',
+      'Volume de 10 à 30 litres en général ; plus la combinaison est épaisse, plus le volume doit être grand.',
+      'Gilet dorsal : peut être gonflé à 100 %, favorise la position horizontale, mais n’est pas un gilet de sauvetage.',
+      'Un gilet ajustable ne peut pas être gonflé à 100 % de sa capacité.',
+    ], [
+      qcm('Quel type de gilet domine aujourd’hui la plongée de loisir ?', ['Enveloppant', 'Ajustable', 'Dorsal tek', 'Sans gonflage'], 1,
+        'Leur polyvalence : ils s’adaptent à plusieurs gabarits et les sangles détachables facilitent l’équipement.'),
+      qcm('Quel avantage majeur du gilet à flottabilité dorsale ?', [
+        'Il est le moins cher',
+        'Il peut être gonflé à 100 % sans entraver les mouvements et favorise la position horizontale',
+        'Il sert de gilet de sauvetage',
+        'Il est plus petit',
+      ], 1, 'La vessie est sur le dos : le torse est libre, même gonflé au maximum.'),
+      vf('Un gilet enveloppant peut être ajusté à toutes les tailles.', false,
+        'L’enveloppe est d’un seul tenant : il est spécifique à un gabarit, sans ajustement possible.'),
+      qcm('Quel volume de gilet pour des plongées avec une combinaison épaisse ?', ['Un petit volume suffit', 'Un grand volume', 'Aucun gilet nécessaire', 'Peu importe'], 1,
+        'La flottabilité varie beaucoup entre la surface et le fond : il faut un gilet de grand volume.'),
+    ]),
+
+    fiche('N2', 36, 'Les bouteilles de plongée', [
+      'Le propriétaire est responsable du bon état de sa bouteille ; en cas de doute (corrosion, choc, entrée d’eau), il demande une inspection.',
+      'Inspection périodique (visite) : au moins une fois tous les 12 mois. Requalification (épreuve) : tous les 2 ans en régime général.',
+      'Régime TIV : requalification tous les 6 ans si un Technicien en Inspection Visuelle inspecte la bouteille au moins une fois par an. Certains pays ne le reconnaissent pas.',
+      'Épreuve : bouteille remplie d’eau (incompressible), pression au moins égale à 120 % de la pression de service, sans dépasser la pression d’épreuve (généralement 1,5 × PS, soit 300 bars pour 200).',
+      'Gravage de la nature du gaz : AIR (air sec seul), G2 (au plus 21 % d’O2), G1 (tout gaz respirable sec, nitrox compris).',
+      'Ne jamais changer soi-même sa robinetterie : un mauvais montage peut la transformer en projectile.',
+      'Choix conseillé pour l’évolution des niveaux : 15 L ou 12 L à 230 bars ; pour le nitrox, une bouteille gravée G1.',
+    ], [
+      qcm('À quelle fréquence une bouteille de plongée doit-elle être requalifiée (régime général) ?', ['Tous les ans', 'Tous les 2 ans', 'Tous les 4 ans', 'Tous les 6 ans'], 1,
+        'Régime général : inspection au moins tous les 12 mois et requalification tous les 2 ans. Le régime TIV porte la requalification à 6 ans.'),
+      qcm('Que faut-il pour bénéficier d’une requalification tous les 6 ans (régime TIV) ?', [
+        'Rien',
+        'Un cahier des charges et une inspection visuelle annuelle par un TIV, consignée dans un registre',
+        'Une bouteille en aluminium',
+        'Être plongeur professionnel',
+      ], 1, 'Le TIV inspecte la bouteille au moins une fois tous les 12 mois, avec attestation d’inspection visuelle.'),
+      qcm('Pourquoi l’épreuve se fait-elle avec de l’eau ?', ['Pour nettoyer', 'L’eau est incompressible : pas de projection de métal en cas de fuite', 'Pour refroidir', 'Par tradition'], 1,
+        'L’eau n’étant pas compressible, une rupture ne projette pas de métal.'),
+      qcm('Quelle marque de gaz est requise pour plonger au nitrox ?', ['AIR', 'G2', 'G1', 'Aucune'], 2,
+        'G1 : tout type de gaz sec respirable, y compris ceux dépassant 21 % d’oxygène comme le nitrox.'),
+      vf('Il ne faut jamais procéder soi-même au remplacement de la robinetterie d’un bloc.', true,
+        'Des robinetteries inadaptées ou mal montées sont extrêmement dangereuses ; on confie cela à un spécialiste.'),
+      qcm('Un bloc à 200 bars de pression de service : à quelle pression est-il généralement éprouvé ?', ['200 bars', '240 bars', '300 bars', '500 bars'], 2,
+        'La pression d’épreuve est généralement 1,5 fois la pression de service : 300 bars.'),
+    ]),
+
+    fiche('N2', 37, 'Les combinaisons étanches', [
+      'Principe : interposer une couche d’air entre le corps et l’eau, car on se refroidit 24 fois plus vite dans l’eau que dans l’air.',
+      'Éléments : manchons et collerette, bottillons, fermeture étanche, inflateur, soupape(s) de purge.',
+      'On gonfle un peu dès la surface et régulièrement pendant la descente, pour éviter que le vêtement ne se plaque sur le corps.',
+      'On ne s’équilibre pas avec la combinaison mais avec le gilet ; ne pas trop gonfler, sinon l’air se retrouve dans les chevilles.',
+      'À la remontée, l’air se dilate : purge automatique bien réglée ou manuelle, bras levé. Si la purge se bloque, écarter un manchon.',
+      'Fermetures : entretien à la paraffine, rangement sur cintre.',
+      'Les plongées en combinaison étanche nécessitent un apprentissage avec un moniteur.',
+    ], [
+      vf('Un vêtement étanche est réservé aux plongeurs professionnels.', false,
+        'Il est aujourd’hui d’utilisation courante en loisir en eaux froides, mais demande un apprentissage avec un moniteur.'),
+      qcm('Pourquoi une combinaison étanche isole-t-elle du froid ?', ['Grâce à l’épaisseur de néoprène uniquement', 'Grâce à une couche d’air entre le corps et l’eau', 'Grâce à une résistance chauffante', 'Grâce au lest'], 1,
+        'La couche d’air limite les échanges thermiques, l’eau absorbant la chaleur 24 fois plus vite que l’air.'),
+      qcm('Que faire de l’air dans la combinaison à la remontée ?', ['Le laisser monter dans les jambes', 'Le purger : la soupape évacue l’air qui se dilate', 'Le gonfler davantage', 'Rien'], 1,
+        'Si l’air se retrouve dans les chevilles, on peut ne plus pouvoir se redresser. Il faut purger régulièrement, bras levé.'),
+      qcm('Avec quel élément s’équilibre-t-on dans une combinaison étanche ?', ['Avec la combinaison seule', 'Avec le gilet', 'Avec le lest uniquement', 'Avec les palmes'], 1,
+        'La combinaison ne sert qu’à interposer la quantité d’air nécessaire à l’isolation ; l’équilibre reste assuré par le gilet.'),
+    ]),
+  ],
+};
