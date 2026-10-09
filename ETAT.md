@@ -12,7 +12,7 @@ Consigne utilisateur : "tu apprends de l'appli anglais et lotus mais tu dévelop
 - Squelette créé, `npm install` fait.
 - `src/content/types.ts`, `src/content/build.ts` (helpers `fiche`, `qcm`, `vf`).
 - Contenu écrit : N2 UL1 (fiches 1-6) dans `src/content/n2/ul1.ts`.
-- N2 écrit: ul1..ul6 + nitrox. Reste N2: partie 2 "monde subaquatique" (fiches 45-54, pos. ~283000-438000 de n2.md) à faire en version courte. Puis N3 en entier (n3.md). Puis index.ts, tests, écrans.
+- N2 TERMINÉ (ul1-ul6, nitrox, monde). Reste: N3 en entier (n3.md), puis index.ts, tests, écrans.
 
 ## Prochaines étapes
 1. Lire n2.md par tranches de ~25000 caractères (python -I, t[a:b]) et écrire un fichier par UL : n2/ul2.ts … ul6.ts (+ nitrox), puis n3/ul1..ul6.ts.
