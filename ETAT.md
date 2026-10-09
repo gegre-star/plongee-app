@@ -12,7 +12,7 @@ Consigne utilisateur : "tu apprends de l'appli anglais et lotus mais tu dévelop
 - Squelette créé, `npm install` fait.
 - `src/content/types.ts`, `src/content/build.ts` (helpers `fiche`, `qcm`, `vf`).
 - Contenu écrit : N2 UL1 (fiches 1-6) dans `src/content/n2/ul1.ts`.
-- Lecture du manuel N2 faite jusqu'au caractère ~92000 (début UL2, fiche 7-9 lues).
+- Lecture du manuel N2 faite jusqu au caractère ~137500 (fin UL2). n2/ul2.ts écrit (fiches 7-22).
 
 ## Prochaines étapes
 1. Lire n2.md par tranches de ~25000 caractères (python -I, t[a:b]) et écrire un fichier par UL : n2/ul2.ts … ul6.ts (+ nitrox), puis n3/ul1..ul6.ts.
