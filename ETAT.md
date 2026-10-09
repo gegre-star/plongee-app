@@ -1,27 +1,27 @@
 # État du projet — plongee-app (Plongée N2/N3)
 
-_Mis à jour par Claude en fin de session de travail._
+_Mis à jour par Claude le 2026-10-09._
 
 ## But
-Appli mobile hors-ligne (Expo Go, comme Lotus Chess) pour réviser le N2 et le N3 de plongée.
-Contenu UNIQUEMENT tiré des deux manuels `sources/n2.md` et `sources/n3.md` (Plongée Plaisir, texte OCR sur une seule ligne).
-Modèle technique : `C:/Users/gouin/lotus-chess` (Expo SDK 54, expo-router, AsyncStorage, jest-expo). Pas de Firebase.
-Consigne utilisateur : "tu apprends de l'appli anglais et lotus mais tu développes avec ta memory" = s'inspirer, ne pas copier l'appli anglaise.
+Appli mobile hors-ligne (Expo Go, même socle technique que Lotus Chess) pour réviser le N2 et le N3 de plongée.
+Contenu UNIQUEMENT tiré des deux manuels `sources/n2.md` et `sources/n3.md` (Plongée Plaisir, texte OCR).
+Consigne de départ : s’inspirer de l’appli anglais et de Lotus Chess, mais développer à partir de zéro.
 
 ## Où on en est
-- Squelette créé, `npm install` fait.
-- `src/content/types.ts`, `src/content/build.ts` (helpers `fiche`, `qcm`, `vf`).
-- Contenu écrit : N2 UL1 (fiches 1-6) dans `src/content/n2/ul1.ts`.
-- N2 TERMINÉ. N3: ul1 (1-5), ul2 (6-19), ul3 (20-21), ul4 (22-24) écrits. Lecture n3.md faite jusqu au caractère ~352500. Reste N3: ul5 acteurs (25-31, pos. 353700-374770), ul6 vie sous l eau (32-41, pos 374771-410357, version courte), partie 3 organiser ses plongées (42-45, pos 410357-~475000). Puis index.ts, tests, écrans.
+- Contenu complet écrit : N2 = 8 modules (UL1-UL6, nitrox, monde subaquatique en extraits), N3 = 7 modules (UL1-UL6, organisation des plongées).
+- Logique : mélange des choix, tirage, score, répétition espacée (5 boîtes), points, série de jours, 10 badges, sauvegarde AsyncStorage.
+- Écrans : accueil, apprendre, fiche, quiz, réviser (dont examen blanc), profil.
+- Vérifié : `npm test` (32 tests OK), `npm run typecheck` OK, parcours vérifié dans le navigateur (version web).
+- Versions alignées sur Expo Go SDK 54 (react 19.1.0, react-native 0.81.5).
 
-## Prochaines étapes
-1. Lire n2.md par tranches de ~25000 caractères (python -I, t[a:b]) et écrire un fichier par UL : n2/ul2.ts … ul6.ts (+ nitrox), puis n3/ul1..ul6.ts.
-2. `src/content/index.ts` (assemble MODULES), tests de contenu (ids uniques, answer valide, >=4 questions/fiche).
-3. Logique de progression (répétition espacée type Leitner, XP, séries) + tests.
-4. Écrans : Accueil, Apprendre (modules > fiches > quiz), Réviser (erreurs + examen blanc), Profil.
-5. Vérifier `npm test` et `npm run typecheck`, committer par petites étapes (messages en anglais).
+## Reste à faire / à tester par l’utilisateur
+1. Tester sur le téléphone avec Expo Go (voir README) : rien n’a été essayé sur un vrai téléphone.
+2. Relecture par un moniteur : les questions ont été écrites à partir du texte OCR, un contrôle humain du contenu est conseillé avant un examen.
+3. Parties non couvertes : faune et flore en détail (N2 fiches 47-52, N3 fiches 37-39 résumées), tables MN90 détaillées (lecture de tableaux), annexes (recycleurs, lacs d’altitude, photo, dictionnaire).
+4. Idées : mode sombre/clair, sons, rappel quotidien, export de la progression.
 
-## Pièges
-- Le garde-fou (hook) demande de justifier chaque nouveau fichier créé avec l'outil Write.
-- Une grosse commande shell avec heredoc a échoué une fois : utiliser l'outil Write pour les gros fichiers.
-- Vérifier chaque chiffre/question contre le texte du manuel (calculs inclus).
+## Décisions
+- Pas de Firebase ni de compte : tout reste sur le téléphone.
+- Les choix QCM sont mélangés à l’affichage, pas dans les données.
+- Le garde-fou du poste (hook) impose une seconde tentative à la première création de chaque fichier avec l’outil d’écriture.
+- Un fichier long écrit via le shell peut échouer à cause des apostrophes droites : utiliser l’outil d’écriture ou des apostrophes typographiques.
