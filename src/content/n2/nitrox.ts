@@ -1,0 +1,58 @@
+import { fiche, qcm, vf } from '../build';
+import type { Module } from '../types';
+
+/** N2 — 3e partie : Plongeur Nitrox (fiche 55 du manuel). */
+export const n2Nitrox: Module = {
+  id: 'n2-nitrox',
+  level: 'N2',
+  code: 'PN',
+  title: 'Plongeur Nitrox (PN)',
+  fiches: [
+    fiche('N2', 55, 'Plongeur Nitrox', [
+      'Nitrox = Nitrogen + Oxygen : de l’air enrichi en oxygène (EAN, Enriched Air Nitrox), donc appauvri en azote.',
+      'Intérêt : réduire la charge en azote, donc les risques d’accident de désaturation et la fatigue de fin de plongée.',
+      'Un mélange se note par deux nombres : % d’oxygène puis % d’azote (Nitrox 32/68). Un seul nombre = % d’O2 (EAN32).',
+      'Mélanges courants : Nitrox 32/68, 36/64, 40/60.',
+      'Seules les bouteilles gravées G1 (ou OXY) peuvent recevoir des mélanges à plus de 21 % d’oxygène. Le matériel nitrox est souvent jaune et vert.',
+      'En France : Plongeur Nitrox (PN, mélanges jusqu’à 40 % d’O2) et Plongeur Nitrox Confirmé (PN-C, plusieurs mélanges, oxygène pur).',
+      'Profondeur plancher : profondeur à ne pas dépasser, calculée avec la fraction d’O2 et la PpO2 maximale (1,6 bar au plus, souvent 1,4).',
+      'Pression partielle : Pp gaz = pression absolue × fraction du gaz. Pabs plancher = PpO2 max ÷ FO2.',
+      'Risque d’hyperoxie (effet Paul Bert) : l’oxygène en excès provoque une crise de type épileptique, avec risque de noyade, souvent sans signe précurseur.',
+      'Contrôle avant la plongée : analyser le mélange (analyseur calibré à l’air à 20,9 %) et renseigner la fiche d’identification de la bouteille.',
+      'Ordinateur nitrox : régler le pourcentage d’O2 et le seuil de PpO2 ; surveiller l’indicateur CNS % (ne pas dépasser 75 à 80 %).',
+    ], [
+      qcm('D’où vient le mot « Nitrox » ?', ['De Nitrogen et Oxygen', 'De Nitrate et Oxydation', 'D’un inventeur nommé Nitrox', 'De Nitro et Oxy'], 0,
+        'Contraction de NITRogen (azote) et OXygen (oxygène).'),
+      qcm('Quel est l’intérêt principal de plonger au nitrox ?', ['Descendre plus profond', 'Réduire la charge en azote : moins de risque d’ADD et moins de fatigue', 'Respirer moins d’oxygène', 'Économiser de l’air'], 1,
+        'Une plongée au nitrox est réalisée avec un air enrichi en oxygène, donc appauvri en azote.'),
+      qcm('Que signifie « Nitrox 32/68 » ?', ['32 % d’azote et 68 % d’oxygène', '32 % d’oxygène et 68 % d’azote', '32 m de profondeur', '32 bars'], 1,
+        'Le premier nombre est le pourcentage d’oxygène, le second celui d’azote.'),
+      qcm('Pression partielle d’oxygène à 20 m avec un Nitrox 40/60 ?', ['0,4 bar', '1,2 bar', '2,0 bars', '3,0 bars'], 1,
+        'À 20 m la pression absolue est de 3 bars : PpO2 = 3 × 0,4 = 1,2 bar.'),
+      qcm('Profondeur plancher d’un Nitrox 40/60 avec une PpO2 maximale de 1,6 bar ?', ['20 m', '30 m', '40 m', '50 m'], 1,
+        'Pabs = 1,6 ÷ 0,4 = 4 bars, soit 30 m.'),
+      qcm('Vous plongez au Nitrox 32 avec un seuil de PpO2 de 1,3 bar. Quelle est votre profondeur plancher ?', ['Environ 20 m', 'Environ 30 m', 'Environ 40 m', 'Environ 50 m'], 1,
+        'Pabs = 1,3 ÷ 0,32 ≈ 4,06 bars, soit un peu plus de 30 m : on retient 30 m.'),
+      qcm('Quelle est la pression partielle d’oxygène maximale à ne jamais dépasser en plongée de loisir ?', ['1,0 bar', '1,2 bar', '1,6 bar', '2,0 bars'], 2,
+        'Au-delà de 1,6 bar le risque d’hyperoxie devient dangereux ; on retient souvent une valeur inférieure, par exemple 1,4 bar.'),
+      qcm('Un plongeur Nitrox (PN) peut utiliser des mélanges contenant jusqu’à…', ['21 % d’O2', '32 % d’O2', '40 % d’O2', '100 % d’O2'], 2,
+        'En France, un Plongeur Nitrox (PN) peut utiliser des mélanges contenant jusqu’à 40 % d’oxygène.'),
+      qcm('Quelle est la conséquence d’une hyperoxie ?', ['Une crise de type épileptique avec risque de noyade', 'Une simple toux', 'Une narcose légère', 'Un barotraumatisme de l’oreille'], 0,
+        'C’est l’effet Paul Bert : l’oxygène en trop forte concentration stimule les centres nerveux.'),
+      qcm('Comment prévenir le risque d’hyperoxie ?', [
+        'En plongeant de nuit',
+        'En ne dépassant pas la profondeur plancher et en analysant le mélange avant la plongée',
+        'En respirant plus vite',
+        'En descendant lentement',
+      ], 1, 'Les signes précurseurs sont souvent absents : la prévention est fondamentale.'),
+      qcm('Comment calibrer un analyseur d’oxygène au niveau de la mer ?', ['À 0 %', 'À l’air, sur 20,9 %', 'À 50 %', 'À 100 %'], 1,
+        'On le met sous tension, on le calibre à l’air (20,9 % d’O2), puis on le branche sur la bouteille et on attend 10 à 15 secondes.'),
+      qcm('Que paramétrer sur son ordinateur pour plonger au nitrox ?', ['Seulement la profondeur', 'Le pourcentage d’oxygène et le seuil de PpO2', 'La température', 'Le nom du plongeur'], 1,
+        'Ces deux éléments suffisent à calculer la désaturation, définir la profondeur plancher et déclencher l’alarme.'),
+      vf('Un indicateur CNS % à 90 % est sans danger.', false,
+        'Il est conseillé de ne jamais dépasser 75 à 80 % ; au-delà, on fait une pause dans ses plongées.'),
+      vf('On peut gonfler au nitrox une bouteille gravée « AIR ».', false,
+        'Seules les bouteilles gravées G1 (ou OXY) peuvent recevoir des mélanges de plus de 21 % d’oxygène.'),
+    ]),
+  ],
+};
