@@ -1,0 +1,15 @@
+{
+  "expo": {
+    "name": "Plongée N2-N3",
+    "slug": "plongee-n2-n3",
+    "scheme": "plongeen2n3",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "backgroundColor": "#0b2233",
+    "assetBundlePatterns": ["**/*"],
+    "ios": { "supportsTablet": true },
+    "android": {},
+    "plugins": ["expo-router"]
+  }
+}
