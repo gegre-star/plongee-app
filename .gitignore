@@ -5,3 +5,4 @@ dist/
 qr-*.png
 dist/
 sources/
+.claude/
