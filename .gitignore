@@ -4,3 +4,4 @@ dist/
 *.log
 qr-*.png
 dist/
+sources/

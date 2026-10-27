@@ -40,3 +40,8 @@ Consigne de départ : s’inspirer de l’appli anglais et de Lotus Chess, mais 
 - `eas.json` prêt pour une vraie application (compte Apple Developer payant nécessaire pour iPhone).
 - Reste à faire par l'utilisateur : créer le dépôt GitHub, autoriser l'envoi (push), activer Pages (Source : GitHub Actions), puis ajouter à l'écran d'accueil depuis Safari.
 - Le navigateur intégré à l'appli Claude bloque les service workers : tester le hors ligne dans un vrai Chrome.
+
+## Dépôt GitHub (2026-10-27)
+- Dépôt privé `gegre-star/plongee-app` ; les manuels `sources/` ne sont PAS envoyés (droit d'auteur) : retirés de l'historique, dossier ignoré par git. Copies des manuels : `Documents/plongee/n2.md` et `n3.md`.
+- Sauvegarde de l'ancien historique (avec manuels) : `GIT/plongee-app-sauvegarde-avant-github.bundle` (ne jamais l'envoyer sur GitHub).
+- GitHub Pages inutilisable en privé : `deploy-web.yml` est en lancement manuel ; héberger `dist/` sur Netlify ou Cloudflare Pages, ou passer le dépôt en public.
