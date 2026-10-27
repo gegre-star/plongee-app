@@ -1,14 +1,10 @@
 name: Publier la version web
 
-# Construit l'application web installable et la publie sur GitHub Pages.
-# GitHub Pages n'est gratuit que pour un dépôt PUBLIC : tant que le dépôt est
-# privé, la publication reste manuelle (onglet Actions → Run workflow).
-# Après passage en public, remplacer `on:` par :
-#   on:
-#     push:
-#       branches: [main]
-#     workflow_dispatch:
+# Construit l'application web installable et la publie sur GitHub Pages
+# à chaque poussée sur main (après vérification du typage et des tests).
 on:
+  push:
+    branches: [main]
   workflow_dispatch:
 
 permissions:

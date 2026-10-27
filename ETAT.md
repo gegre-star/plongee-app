@@ -45,3 +45,7 @@ Consigne de départ : s’inspirer de l’appli anglais et de Lotus Chess, mais 
 - Dépôt privé `gegre-star/plongee-app` ; les manuels `sources/` ne sont PAS envoyés (droit d'auteur) : retirés de l'historique, dossier ignoré par git. Copies des manuels : `Documents/plongee/n2.md` et `n3.md`.
 - Sauvegarde de l'ancien historique (avec manuels) : `GIT/plongee-app-sauvegarde-avant-github.bundle` (ne jamais l'envoyer sur GitHub).
 - GitHub Pages inutilisable en privé : `deploy-web.yml` est en lancement manuel ; héberger `dist/` sur Netlify ou Cloudflare Pages, ou passer le dépôt en public.
+
+## Dépôt passé en public (2026-10-27)
+- Dépôt `gegre-star/plongee-app` en PUBLIC à la demande de l'utilisateur (manuels toujours exclus). GitHub Pages activé (source : GitHub Actions) ; `deploy-web.yml` publie à chaque envoi sur `main`.
+- Site : https://gegre-star.github.io/plongee-app/ ; à installer depuis Safari (Partager, Sur l'écran d'accueil).

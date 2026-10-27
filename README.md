@@ -23,9 +23,9 @@ Deux voies. La première est gratuite et suffit pour réviser ; la seconde donne
 
 L’application est publiée comme un site web que l’on « installe » sur l’écran d’accueil. Après la première visite, elle s’ouvre sans connexion.
 
-1. Le dépôt GitHub est `gegre-star/plongee-app` (privé). À chaque envoi sur `main`, GitHub vérifie le code (`ci.yml`).
-2. **GitHub Pages n’est gratuit que pour un dépôt public.** Pour un dépôt privé, héberger le dossier `dist/` ailleurs (Netlify, Cloudflare Pages, gratuits) : `npm run build:web` le produit.
-3. Si le dépôt passe en public : **Settings → Pages → Source : GitHub Actions**, puis lancer `deploy-web.yml` (onglet Actions) ; adresse `https://gegre-star.github.io/plongee-app/`.
+1. Le dépôt GitHub est `gegre-star/plongee-app` (public). À chaque envoi sur `main`, GitHub vérifie le code (`ci.yml`) puis publie le site (`deploy-web.yml`) sur GitHub Pages.
+2. Adresse du site : **https://gegre-star.github.io/plongee-app/**
+3. Réglage unique déjà fait : **Settings → Pages → Source : GitHub Actions**.
 4. Sur l’iPhone, ouvrir cette adresse dans **Safari** → bouton **Partager** → **Sur l’écran d’accueil** → **Ajouter**.
 5. Ouvrir une fois l’application avec du réseau (le temps du chargement), puis elle fonctionne hors ligne.
 
