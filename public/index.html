@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover" />
+    <title>Plongée N2-N3</title>
+    <meta name="description" content="Révision des niveaux 2 et 3 de plongée, hors ligne." />
+    <meta name="theme-color" content="#0b2233" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="Plongée" />
+    <link rel="manifest" href="%EXPO_BASE_URL%/manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="%EXPO_BASE_URL%/apple-touch-icon.png" />
+    <style id="expo-reset">
+      html,
+      body {
+        height: 100%;
+        background-color: #0b2233;
+      }
+      body {
+        overflow: hidden;
+      }
+      #root {
+        display: flex;
+        height: 100%;
+        flex: 1;
+      }
+    </style>
+  </head>
+
+  <body>
+    <noscript>Il faut activer JavaScript pour utiliser cette application.</noscript>
+    <div id="root"></div>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function () {
+          navigator.serviceWorker.register('%EXPO_BASE_URL%/sw.js').catch(function () {});
+        });
+      }
+    </script>
+  </body>
+</html>

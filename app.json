@@ -5,11 +5,39 @@
     "scheme": "plongeen2n3",
     "version": "1.0.0",
     "orientation": "portrait",
+    "icon": "./assets/icon.png",
     "userInterfaceStyle": "dark",
     "backgroundColor": "#0b2233",
     "assetBundlePatterns": ["**/*"],
-    "ios": { "supportsTablet": true },
-    "android": {},
-    "plugins": ["expo-router"]
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "fr.gouin.plongeen2n3",
+      "buildNumber": "1"
+    },
+    "android": {
+      "package": "fr.gouin.plongeen2n3",
+      "versionCode": 1,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#0b2233"
+      }
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "single",
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#0b2233"
+        }
+      ]
+    ]
   }
 }

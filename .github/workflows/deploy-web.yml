@@ -1,0 +1,65 @@
+name: Publier la version web
+
+# Construit l'application web installable et la publie sur GitHub Pages
+# à chaque poussée sur main (après vérification du typage et des tests).
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Une seule publication à la fois ; une plus récente remplace celle en attente.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  construire:
+    name: Construire
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer le dépôt
+        uses: actions/checkout@v4
+
+      - name: Installer Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Installer les dépendances
+        run: npm ci
+
+      - name: Vérifier le typage
+        run: npx tsc --noEmit
+
+      - name: Lancer les tests
+        run: npm test -- --ci
+
+      # Le site est publié dans un sous-dossier portant le nom du dépôt :
+      # https://<compte>.github.io/<dépôt>/
+      - name: Construire la version web
+        run: npm run build:web
+        env:
+          EXPO_BASE_URL: /${{ github.event.repository.name }}
+
+      - name: Préparer la publication
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  publier:
+    name: Publier
+    needs: construire
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Publier sur GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

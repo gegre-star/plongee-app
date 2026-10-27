@@ -32,3 +32,11 @@ Consigne de départ : s’inspirer de l’appli anglais et de Lotus Chess, mais 
 - Résultat du test dans Expo Go : pas encore confirmé par l’utilisateur.
 
 - Piège installation : `npm install --legacy-peer-deps` saute les dépendances de expo-router (expo-constants, expo-linking) ; vérifier avec `npx expo export --platform ios`.
+
+## Installation comme application (préparée le 2026-10-27, rien n'est publié)
+- Icônes générées (`npm run icons`), nom et identifiants dans `app.json` (`fr.gouin.plongeen2n3`), `app.config.js` pour l'adresse de base du site.
+- Version web installable : `npm run build:web` ; service worker qui met 33 fichiers en mémoire dès la première visite ; hors ligne vérifié dans Chrome (serveur coupé, accueil affiché).
+- Publication automatique prévue : `.github/workflows/deploy-web.yml` (GitHub Pages) + `ci.yml` copié de Lotus Chess. Branche renommée `main`.
+- `eas.json` prêt pour une vraie application (compte Apple Developer payant nécessaire pour iPhone).
+- Reste à faire par l'utilisateur : créer le dépôt GitHub, autoriser l'envoi (push), activer Pages (Source : GitHub Actions), puis ajouter à l'écran d'accueil depuis Safari.
+- Le navigateur intégré à l'appli Claude bloque les service workers : tester le hors ligne dans un vrai Chrome.
