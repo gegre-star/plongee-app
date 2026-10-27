@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, type ColorValue } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { Tabs } from 'expo-router';
 import { ProgressProvider, useProgress } from '../src/state/ProgressContext';
@@ -23,7 +23,7 @@ function BadgeCelebration() {
   );
 }
 
-const icon = (glyph: string) => ({ color }: { color: string }) => <Text style={{ color, fontSize: 18 }}>{glyph}</Text>;
+const icon = (glyph: string) => ({ color }: { color: ColorValue }) => <Text style={{ color, fontSize: 18 }}>{glyph}</Text>;
 
 export default function RootLayout() {
   return (

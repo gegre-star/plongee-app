@@ -12,7 +12,7 @@ Consigne de départ : s’inspirer de l’appli anglais et de Lotus Chess, mais 
 - Logique : mélange des choix, tirage, score, répétition espacée (5 boîtes), points, série de jours, 10 badges, sauvegarde AsyncStorage.
 - Écrans : accueil, apprendre, fiche, quiz, réviser (dont examen blanc), profil.
 - Vérifié : `npm test` (32 tests OK), `npm run typecheck` OK, parcours vérifié dans le navigateur (version web).
-- Versions alignées sur Expo Go SDK 54 (react 19.1.0, react-native 0.81.5).
+- Projet passé en SDK Expo 58 (react 19.3.0, react-native 0.88.0) : l’Expo Go de l’App Store ne suit que le SDK le plus récent, et se fermait aussitôt avec le SDK 54.
 
 ## Reste à faire / à tester par l’utilisateur
 1. Tester sur le téléphone avec Expo Go (voir README) : rien n’a été essayé sur un vrai téléphone.
@@ -30,3 +30,5 @@ Consigne de départ : s’inspirer de l’appli anglais et de Lotus Chess, mais 
 - Le mode réseau local échoue sur l’iPhone (« Could not connect to the server ») : pare-feu Windows ou réseau Wi-Fi.
 - Solution : mode tunnel (`npx expo start --tunnel --port 8082`), outil `@expo/ngrok` ajouté aux dépendances de développement.
 - Résultat du test dans Expo Go : pas encore confirmé par l’utilisateur.
+
+- Piège installation : `npm install --legacy-peer-deps` saute les dépendances de expo-router (expo-constants, expo-linking) ; vérifier avec `npx expo export --platform ios`.
