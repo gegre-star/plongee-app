@@ -1,6 +1,6 @@
 # État du projet — plongee-app (Plongée N2/N3)
 
-_Mis à jour par Claude le 2026-10-09._
+_Mis à jour par Claude le 2026-10-27._
 
 ## But
 Appli mobile hors-ligne (Expo Go, même socle technique que Lotus Chess) pour réviser le N2 et le N3 de plongée.
@@ -25,3 +25,8 @@ Consigne de départ : s’inspirer de l’appli anglais et de Lotus Chess, mais 
 - Les choix QCM sont mélangés à l’affichage, pas dans les données.
 - Le garde-fou du poste (hook) impose une seconde tentative à la première création de chaque fichier avec l’outil d’écriture.
 - Un fichier long écrit via le shell peut échouer à cause des apostrophes droites : utiliser l’outil d’écriture ou des apostrophes typographiques.
+
+## Test sur téléphone (2026-10-09/27)
+- Le mode réseau local échoue sur l’iPhone (« Could not connect to the server ») : pare-feu Windows ou réseau Wi-Fi.
+- Solution : mode tunnel (`npx expo start --tunnel --port 8082`), outil `@expo/ngrok` ajouté aux dépendances de développement.
+- Résultat du test dans Expo Go : pas encore confirmé par l’utilisateur.
